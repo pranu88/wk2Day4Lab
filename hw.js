@@ -61,15 +61,60 @@
 
 
      function bills(amountPaid, amountCost){
-      let change;
+      let change, count_100 = 0, count_50 = 0, count_20 = 0, count_10 = 0, count_05 = 0,count_02 = 0, count_01 = 0;
       change = amountPaid - amountCost;
       if(change > 0){
-      console.log(change + "$");
-      }else{
-        console.log("you should pay " + -(change) +"$" )
+      console.log("Your total change is : $" + change);
       }
+
+      while (change >= 1){
+        if(change >= 100){
+            change -= 100;
+            count_100++;
+        }else if (change >= 50){
+            change -= 50;
+            count_50++;
+        }else if (change >= 20){
+            change -= 20;
+            count_20++;
+        }else if (change >= 10){
+            change -= 10;
+            count_10++;
+        }else if (change >= 5){
+            change -= 5;
+            count_05++;
+        }else if (change >= 2){
+            change -= 2;
+            count_02++;
+        }else if (change >= 1){
+            change -= 1;
+            count_01++;
+        }
+      }
+      if(count_100 > 0){
+        console.log("You will get " + count_100 + " $100 bills");
+      } 
+      if (count_50 > 0){
+        console.log("You will get " + count_50 + " $50 bills");
+      }
+       if (count_20 > 0){
+        console.log("You will get " + count_20 + " $20 bills");
+      }
+       if (count_10 > 0){
+        console.log("You will get " + count_10 + " $10 bills");
+      }
+       if (count_05 > 0){
+        console.log("You will get " + count_05 + " $5 bills");
+      }
+       if (count_02 > 0){
+        console.log("You will get " + count_02 + " $2 bills");
+      }
+       if (count_01 > 0){
+        console.log("You will get " + count_01 + " $1 bills");
+      }
+
      }
-     bills(10, 20)
+     bills(10000, 20.50)
 
 
 
